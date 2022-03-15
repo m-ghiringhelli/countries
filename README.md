@@ -1,25 +1,27 @@
-# Alchemy React Base Template
+# Plan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I. Create CountryCard
+    A. CountryCard folder
+        1. CountryCard.js
+        2. CountryCard.css
+    B. Setup country card layout    
+II. Render example CountryCard
+    A. Sample data
+    B. View card
+III. Fetch Data
+    A. fetchCountries function
+    B. useEffect to fetch in main
+    C. create state
+IV. Get countries rendering
+    A. rewrite countryCard for props
+    B. send props to countryCard
+    C. .map to loop through
+V. Add select component
+    A. create select
+    B. With data as options (.map)
+VI. Filter countries by continent
+    A. .filter 
+    B. rerender
+VII. Query by country name
+VIII. Sort by name
 
-Use this template for all your "from scratch" deliverables. To start, simply run
-
-- `npm install`
-- `npm start`
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
