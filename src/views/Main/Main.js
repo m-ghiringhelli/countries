@@ -12,6 +12,7 @@ export default function Main() {
       try {
         const resp = await fetchCountries();
         setCountries(resp);
+        console.log(resp);
       } catch (e) {
         setErrorMessage('Uh-oh! Something is effed up. Try reloading the page? Or writing us an angry letter');
       }
