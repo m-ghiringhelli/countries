@@ -6,6 +6,9 @@ import './Main.css';
 
 export default function Main() {
   const [countries, setCountries] = useState([]);
+  //for selected continent
+  const [continent, setContinent] = useState([]);
+  //to create array of continents
   const [continents, setContinents] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 

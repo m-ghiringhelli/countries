@@ -8,6 +8,7 @@ export default function Select({ continents }) {
       <select onChange={(e) => {
         console.log(e.target.value);
       }}>
+        <option selected disabled>- pick a continent -</option>
         {continents.map((continent) => (
           <SelectRow key={continent} name={continent} />
         ))}
