@@ -30,10 +30,8 @@ export default function Main() {
     fetchData();
   }, []);
 
-  const filterContinents = () => {
-    return continents.filter((selected) => selected.continent === continent || continent === 'All');
-  };
-  
+  const filterByContinent = countries.filter((selected) => selected.continent === continent || continent === 'All');
+
   return (
     <>
       <p>{errorMessage}</p>
@@ -41,7 +39,7 @@ export default function Main() {
         <Select continents={continents} callback={setContinent} />
       </div>
       <div className='country-list'>
-        {filterContinents().map((country) => (
+        {filterByContinent.map((country) => (
           <CountryCard key={country.id} name={country.name} code={country.iso2} />
         ))}
       </div>
