@@ -7,7 +7,7 @@ import './Main.css';
 export default function Main() {
   const [countries, setCountries] = useState([]);
   //for selected continent
-  const [continent, setContinent] = useState([]);
+  const [continent, setContinent] = useState('All');
   //to create array of continents
   const [continents, setContinents] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -29,15 +29,17 @@ export default function Main() {
     };
     fetchData();
   }, []);
-  
+
+  const filterByContinent = countries.filter((selected) => selected.continent === continent || continent === 'All');
+
   return (
     <>
       <p>{errorMessage}</p>
       <div>
-        <Select continents={ continents } />
+        <Select continents={continents} callback={setContinent} />
       </div>
       <div className='country-list'>
-        {countries.map((country) => (
+        {filterByContinent.map((country) => (
           <CountryCard key={country.id} name={country.name} code={country.iso2} />
         ))}
       </div>
