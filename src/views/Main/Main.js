@@ -11,6 +11,7 @@ export default function Main() {
   //to create array of continents
   const [continents, setContinents] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +24,7 @@ export default function Main() {
           ))];
         //filter out null
         setContinents(contList.filter(Boolean));
+        setLoading(false);
       } catch (e) {
         setErrorMessage('Uh-oh! Something is effed up. Try reloading the page? Or writing us an angry letter');
       }
@@ -31,6 +33,8 @@ export default function Main() {
   }, []);
 
   const filterByContinent = countries.filter((selected) => selected.continent === continent || continent === 'All');
+
+  if (loading) return <p>loading.........</p>;
 
   return (
     <>
