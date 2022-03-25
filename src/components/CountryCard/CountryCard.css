@@ -1,0 +1,11 @@
+.country-card {
+    width: 20%;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.country-card img {
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+}
